@@ -1,22 +1,6 @@
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
-/* Full width top navigation */
-nav {
-    width: 100%;
-    height: 70px;
-    background-color: #050505;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 1px solid #3E5641;
-}
-
 /* Navigation links */
 nav a {
-    color: #3E5641;
+    color: #822659;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -24,30 +8,26 @@ nav a {
     transition: all 0.25s ease;
 }
 
-/* Hover effect */
+/* Navigation hover */
 nav a:hover {
     background-color: #111111;
-    color: #822659;
+    color: #3E5641;
 }
 
-/* OLED background */
-body {
-    background-color: #000000;
-    color: #F5E8D8;
-    font-family: Arial, sans-serif;
-}
-
-/* Center page content */
-.content {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 0 25px;
-    text-align: center;
+/* Navbar border */
+nav {
+    width: 100%;
+    height: 70px;
+    background-color: #050505;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 1px solid #822659;
 }
 
 /* Main title */
 .name {
-    color: #3E5641;
+    color: #822659;
     font-size: 48px;
     display: block;
     margin-bottom: 15px;
@@ -60,26 +40,9 @@ body {
     display: block;
 }
 
-/* Space below title */
-h1 {
-    margin-bottom: 40px;
-}
-
 /* Section headings */
 h2 {
-    color: #822659;
-}
-
-/* Paragraphs and list items */
-p,
-li {
-    color: #F5E8D8;
-}
-
-/* Keep bullet points readable */
-.content ul {
-    display: inline-block;
-    text-align: left;
+    color: #3E5641;
 }
 
 /* Buttons */
@@ -94,16 +57,11 @@ button,
     transition: all 0.25s ease;
 }
 
-button:hover,
-.btn:hover {
-    filter: brightness(1.15);
-}
-
 /* General links */
 a {
-    color: #3E5641;
+    color: #822659;
 }
 
 a:hover {
-    color: #822659;
+    color: #3E5641;
 }
