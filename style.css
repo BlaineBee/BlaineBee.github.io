@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
 }
-/* im very... indecisive*/
+
 /* Full width top navigation */
 nav {
     width: 100%;
@@ -11,12 +11,12 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #004D61;
+    border-bottom: 1px solid #3E5641;
 }
 
-/* Tab links */
+/* Navigation links */
 nav a {
-    color: #004D61;
+    color: #3E5641;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -30,7 +30,7 @@ nav a:hover {
     color: #822659;
 }
 
-/* OLED black page background */
+/* OLED background */
 body {
     background-color: #000000;
     color: #F5E8D8;
@@ -47,7 +47,7 @@ body {
 
 /* Main title */
 .name {
-    color: #004D61;
+    color: #3E5641;
     font-size: 48px;
     display: block;
     margin-bottom: 15px;
@@ -82,10 +82,10 @@ li {
     text-align: left;
 }
 
-/* Buttons (for future use) */
+/* Buttons */
 button,
 .btn {
-    background-color: #3E5641;
+    background-color: #004D61;
     color: #F5E8D8;
     border: none;
     padding: 12px 24px;
@@ -99,11 +99,9 @@ button:hover,
     filter: brightness(1.15);
 }
 
-/* Links */
-/* im so indecisive*/
-
+/* General links */
 a {
-    color: #004D61;
+    color: #3E5641;
 }
 
 a:hover {
