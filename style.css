@@ -11,12 +11,12 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #822659;
+    border-bottom: 1px solid #3E5641;
 }
 
 /* Navigation links */
 nav a {
-    color: #822659;
+    color: #3E5641;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -27,7 +27,7 @@ nav a {
 /* Hover effect */
 nav a:hover {
     background-color: #111111;
-    color: #3E5641;
+    color: #822659;
 }
 
 /* OLED background */
@@ -47,7 +47,7 @@ body {
 
 /* Main title */
 .name {
-    color: #822659;
+    color: #3E5641;
     font-size: 48px;
     display: block;
     margin-bottom: 15px;
@@ -55,7 +55,7 @@ body {
 
 /* Subtitle */
 .title {
-    color: #822659;
+    color: #3E5641;
     font-size: 32px;
     display: block;
 }
@@ -67,7 +67,7 @@ h1 {
 
 /* Section headings */
 h2 {
-    color: #3E5641;
+    color: #822659;
 }
 
 /* Paragraphs and list items */
@@ -101,9 +101,9 @@ button:hover,
 
 /* General links */
 a {
-    color: #822659;
+    color: #3E5641;
 }
 
 a:hover {
-    color: #3E5641;
+    color: #822659;
 }
