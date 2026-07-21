@@ -119,7 +119,7 @@ a:hover {
 
 .card {
     background: #0a0a0a;
-    border: 1px solid #3E5641;
+    border: 1px solid #822659;
     border-radius: 12px;
     padding: 25px;
     text-decoration: none;
@@ -128,12 +128,12 @@ a:hover {
 
 .card:hover {
     transform: translateY(-6px);
-    border-color: #822659;
+    border-color: #3E5641;
     box-shadow: 0 0 20px rgba(130,38,89,.35);
 }
 
 .card h3 {
-    color: #3E5641;
+    color: #822659;
     margin-top: 0;
     margin-bottom: 15px;
     font-size: 24px;
@@ -145,7 +145,7 @@ a:hover {
 }
 
 .card:hover h3 {
-    color: #822659;
+    color: #3E5641;
 }
 
 .about-home {
