@@ -1,33 +1,29 @@
 body {
+    margin: 0;
     background: #0d1117;
     color: #c9d1d9;
     font-family: Arial, sans-serif;
-    max-width: 900px;
-    margin: auto;
-    padding: 40px;
 }
 
-h1, h2 {
-    color: #58a6ff;
-}
-
-a {
-    color: #58a6ff;
-}
-
+/* Full-width navigation bar */
 nav {
+    width: 100%;
     background: #161b22;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 1px solid #30363d;
 }
 
+/* Navigation links */
 nav a {
     color: #58a6ff;
     text-decoration: none;
-    margin-right: 20px;
     font-weight: bold;
+    margin: 0 25px;
+    font-size: 18px;
 }
 
+/* Hover effect */
 nav a:hover {
     color: white;
 }
