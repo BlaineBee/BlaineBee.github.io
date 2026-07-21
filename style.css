@@ -107,3 +107,43 @@ a {
 a:hover {
     color: #822659;
 }
+
+/* ---------- Portfolio Cards ---------- */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.card {
+    background: #0a0a0a;
+    border: 1px solid #3E5641;
+    border-radius: 12px;
+    padding: 25px;
+    text-decoration: none;
+    transition: all .25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #822659;
+    box-shadow: 0 0 20px rgba(130,38,89,.35);
+}
+
+.card h3 {
+    color: #3E5641;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 24px;
+}
+
+.card p {
+    color: #F5E8D8;
+    line-height: 1.6;
+}
+
+.card:hover h3 {
+    color: #822659;
+}
