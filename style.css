@@ -14,3 +14,20 @@ h1, h2 {
 a {
     color: #58a6ff;
 }
+
+nav {
+    background: #161b22;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+nav a {
+    color: #58a6ff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: white;
+}
