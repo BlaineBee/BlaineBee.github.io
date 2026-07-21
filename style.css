@@ -11,29 +11,29 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #222222;
+    border-bottom: 1px solid #DAA520;
 }
 
 /* Tab links */
 nav a {
-    color: #58a6ff;
+    color: #FF6F61;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
     padding: 25px 40px;
-    transition: 0.2s ease;
+    transition: all 0.25s ease;
 }
 
 /* Hover effect */
 nav a:hover {
     background-color: #111111;
-    color: #ffffff;
+    color: #FF4500;
 }
 
 /* OLED black page background */
 body {
     background-color: #000000;
-    color: #e6edf3;
+    color: #F5E8D8;
     font-family: Arial, sans-serif;
 }
 
@@ -47,7 +47,7 @@ body {
 
 /* Main title */
 .name {
-    color: #58a6ff;
+    color: #FF6F61;
     font-size: 48px;
     display: block;
     margin-bottom: 15px;
@@ -55,7 +55,7 @@ body {
 
 /* Subtitle */
 .title {
-    color: #e6edf3;
+    color: #DAA520;
     font-size: 32px;
     display: block;
 }
@@ -65,8 +65,28 @@ h1 {
     margin-bottom: 40px;
 }
 
+/* Section headings */
+h2 {
+    color: #DAA520;
+}
+
+/* Paragraphs and lists */
+p,
+li {
+    color: #F5E8D8;
+}
+
 /* Keep bullet points readable */
 .content ul {
     display: inline-block;
     text-align: left;
+}
+
+/* Optional: make links elsewhere match the theme */
+a {
+    color: #FF6F61;
+}
+
+a:hover {
+    color: #FF4500;
 }
