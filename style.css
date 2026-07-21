@@ -49,12 +49,20 @@ body {
 .name {
     color: #58a6ff;
     font-size: 48px;
+    display: block;
+    margin-bottom: 15px;
 }
 
 /* Subtitle */
 .title {
     color: #e6edf3;
     font-size: 32px;
+    display: block;
+}
+
+/* Space below title */
+h1 {
+    margin-bottom: 40px;
 }
 
 /* Keep bullet points readable */
