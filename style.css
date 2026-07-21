@@ -46,3 +46,13 @@ body {
     display: inline-block;
     text-align: left;
 }
+
+.name {
+    color: #58a6ff;
+    font-size: 48px;
+}
+
+.title {
+    color: #c9d1d9;
+    font-size: 32px;
+}
