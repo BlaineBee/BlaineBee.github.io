@@ -1,6 +1,6 @@
 This site documents my hands-on experience building technical skills in IT support, system administration, networking, and ethical security testing.  My projects demonstrate my ability to troubleshoot technical issues, support users, configure systems, and understand how technology works from both an administrative and security perspective.
 
-My many areas of focus are as follows:
+## My many areas of focus are as follows:
 
 IT support and troubleshooting
 Windows and Linux administration
