@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     padding: 0;
 }
-
+/* im very... indecisive*/
 /* Full width top navigation */
 nav {
     width: 100%;
@@ -11,12 +11,12 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #DAA520;
+    border-bottom: 1px solid #004D61;
 }
 
 /* Tab links */
 nav a {
-    color: #FF6F61;
+    color: #004D61;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
@@ -27,7 +27,7 @@ nav a {
 /* Hover effect */
 nav a:hover {
     background-color: #111111;
-    color: #FF4500;
+    color: #822659;
 }
 
 /* OLED black page background */
@@ -47,7 +47,7 @@ body {
 
 /* Main title */
 .name {
-    color: #FF6F61;
+    color: #004D61;
     font-size: 48px;
     display: block;
     margin-bottom: 15px;
@@ -55,7 +55,7 @@ body {
 
 /* Subtitle */
 .title {
-    color: #DAA520;
+    color: #822659;
     font-size: 32px;
     display: block;
 }
@@ -67,10 +67,10 @@ h1 {
 
 /* Section headings */
 h2 {
-    color: #DAA520;
+    color: #822659;
 }
 
-/* Paragraphs and lists */
+/* Paragraphs and list items */
 p,
 li {
     color: #F5E8D8;
@@ -82,11 +82,30 @@ li {
     text-align: left;
 }
 
-/* Optional: make links elsewhere match the theme */
+/* Buttons (for future use) */
+button,
+.btn {
+    background-color: #3E5641;
+    color: #F5E8D8;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+button:hover,
+.btn:hover {
+    filter: brightness(1.15);
+}
+
+/* Links */
+/* im so indecisive*/
+
 a {
-    color: #FF6F61;
+    color: #004D61;
 }
 
 a:hover {
-    color: #FF4500;
+    color: #822659;
 }
