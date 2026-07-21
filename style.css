@@ -39,4 +39,10 @@ body {
     max-width: 900px;
     margin: 40px auto;
     padding: 0 25px;
+    text-align: center;
+}
+
+    .content ul {
+    display: inline-block;
+    text-align: left;
 }
