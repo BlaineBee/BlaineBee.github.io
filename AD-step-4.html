@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elijah Blaine Bennett | IT & Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="projects.html">IT Labs</a>
+    <a href="cybersecuritylabs.html">Cybersecurity Labs</a>
+    <a href="resume.html">Resume</a>
+</nav>
+
+
+
+<div class="content">
+    
+     <a href="AD-step-3.html" class="btn">
+    Back to Step Three
+</a>
+
+    <h1>
+        <span class="name">Part Four: Managing Users and Computers with Group Policy.</span>
+        <span class="title"></span>
+    </h1>
+    
+  
+
+    <p>
+        In this guide, I will show you how to manage Users and computers using group policy.
+    </p>
+
+<img class="project-image" 
+    src="images/AD-step-4-images/1.png"
+    alt="step 1">
+    
+    <p>First we will open our AD server. Select 'tools' and click 'group policy management'.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-4-images/2.png"
+    alt="step 2">
+    
+    <p>In the Group policy management go to the correct group. For Sarah this is the Customer service group. Right click on it and select to create 
+    a GPO in the domain.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-4-images/3.png"
+    alt="step 3">
+    
+    <p>Name your GPO. We will name ours 'FakeBank customer service policy'.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-4-images/4.png"
+    alt="step 4">
+   
+   <p> Now right the new GPO and select edit.</p>
+   
+   <img class="project-image" 
+    src="images/AD-step-4-images/5.png"
+    alt="step 5">
+   
+   <p>In this example we will make it to where our customer service agents cannot use control panel. Select the 'Prohibit access to control panel and pc settings' option.
+   </p>
+   
+   <img class="project-image" 
+    src="images/AD-step-4-images/6.png"
+    alt="step 6">
+    
+    <p>Enable this, optionally explain with a comment, and then hit apply.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-4-images/7.png"
+    alt="step 7">
+    
+    <p>Now we will load into Sarahs computer and test the feature. First lets check if her @fakebank.local account is working!</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-4-images/8.png"
+    alt="step 8">
+    
+    <p>We know that everything we are setting up is working so far because Sarah is asked to change her password!!</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-4-images/9.png"
+    alt="step 9">
+    
+    <img class="project-image" 
+    src="images/AD-step-4-images/10.png"
+    alt="step 10">
+    
+    <p>Sarah enters her new desired password and hits enter.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-4-images/11.png"
+    alt="step 11">
+    
+    <p>Now we attempt to open control panel  to make sure the group policy is working. An error here is actually a good thing!</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-4-images/12.png"
+    alt="step 12">
+   
+   <p>Perfect! We see that she does not have access to control panel or PC settings. Now we will move to step Five and learn to make shared folders,
+   setup NTFS perms, and setup network drives.</p>
+   
+   
+    <a href="AD-step-5.html" class="btn">
+    Step Five: Shared Folders, NTFS Permissions, and Network Drives.
+</a>
+    
+</div>
+
+</div>
+
+</body>
+</html>
