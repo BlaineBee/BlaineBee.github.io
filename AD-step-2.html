@@ -1,1 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elijah Blaine Bennett | IT & Cybersecurity Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About Me</a>
+    <a href="projects.html">IT Labs</a>
+    <a href="cybersecuritylabs.html">Cybersecurity Labs</a>
+    <a href="resume.html">Resume</a>
+</nav>
+
+<div class="content">
+
+    <h1>
+        <span class="name">Part Two: creating Employees and groups</span>
+        <span class="title"></span>
+    </h1>
+    
+    <a href="AD-step-2.html" class="btn">
+    Back to Step One
+</a>
+
+    <p>
+        In this guide, I will show you how to add employees and groups to your Active directory server.
+        We will start by loading into our dashboard. A blue box indicates a right click, red is a left, and green indicates you should hover.
+        We will start by clicking the tools menu at the top right.
+    </p>
+
+<img class="project-image" 
+    src="images/AD-step-2-images/1.png"
+    alt="step one">
+    
+    <p> After clicking tools, navigate to Active directory Users and computers'.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/2.png"
+    alt="step 2">
+    
+    <p>find your server, right click it and create a new OU. (orginizational unit).
+    </p>
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/3.png"
+    alt="step 3">
+    
+    <p>Create an employees folder. Mine will be FakeBank Employees.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/4.png"
+    alt="step 4">
+    
+    <p>Now navigate to the OU you created and create another OU. These will be employee types. </p>
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/5.png"
+    alt="step 5">
+    
+    <p>Create your employee types. I have IT, HR, Management, and our regular employees/ customer service agents. </p>
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/6.png"
+    alt="step 6">
+    
+    <p> We will click our server again and make another OU. OU or orginizational units are similar to branches of a folder. This one will hold our groups.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/7.png"
+    alt="step 7">
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/8.png"
+    alt="step 8">
+    
+    <p> Now right click the groups folder, select new, and create an new group.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/9.png"
+    alt="step 9">
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/20.png"
+    alt="step 10">
+    
+    <p>I have created groups for each employee type.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/11.png"
+    alt="step 11">
+    
+    <p>Now all we have to do is place our new customer service worker, Sarah M. Smith, into her correct folder and group! Lets add her by creating new, then user.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/12.png"
+    alt="step 12">
+    
+    <p>We will fill in Sarah's info into the boxes and hit next to continue.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/13.png"
+    alt="step 13">
+    
+    <p> Then we will create her password. This password is a one time use password due to me checking the boc that says she has to change it at time of login.
+    This gives her easy access to the system and allows her to set a more secure password.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/14.png"
+    alt="step 14">
+    
+    <p>Now we will hit next, where we will see Sarah's login name.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/15.png"
+    alt="step 15">
+    
+    <p>Now we will give Sarah her group! Groups decide what employees are actually able to do on their systems! Do we want sarah having access to records she shouldn't
+    Or being able to see other employees sensitive information??? To prevent this we will place her in the G_CustomerService group.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/16.png"
+    alt="step 16">
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/17.png"
+    alt="step 17">
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/18.png"
+    alt="step 18">
+    
+    <p> Now where it says 'Enter the object names to select' we enter Sarah's Group name.</p>
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/19.png"
+    alt="step 19">
+    
+    <img class="project-image" 
+    src="images/AD-step-2-images/20.png"
+    alt="step 20">
+    
+    <p>Now we just hit apply and Sarah is in her correct place and will have the permissions she needs to complete her work! </p>
+    
+    <a href="AD-step-3.html" class="btn">
+    Step Three: Connecting our workers!
+</a>
+    
+</div>
+
+</div>
+
+</body>
+</html>
