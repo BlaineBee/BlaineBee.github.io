@@ -164,3 +164,12 @@ a:hover {
     line-height: 1.8;
     margin-bottom: 20px;
 }
+
+.project-image {
+    width: 100%;
+    max-width: 850px;
+    border-radius: 12px;
+    border: 1px solid #3E5641;
+    margin: 30px auto;
+    display: block;
+}e
