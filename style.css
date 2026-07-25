@@ -174,32 +174,3 @@ a:hover {
     display: block;
 }
 
-.resume-page {
-    width: 100%;
-    max-width: none;
-    margin: 40px auto;
-    padding: 0;
-    text-align: center;
-}
-
-.resume-viewer {
-    width: 95vw;
-    height: calc(100vh - 150px);
-    border: none;
-    margin-top: 20px;
-}
-
-.resume-button {
-    display: inline-block;
-    padding: 12px 25px;
-    background-color: #3E5641;
-    color: #F5E8D8;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.resume-button:hover {
-    background-color: #822659;
-}
