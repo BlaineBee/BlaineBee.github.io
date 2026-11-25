@@ -1,0 +1,101 @@
+---
+layout: default
+section: home
+---
+{% assign all_labs = site.labs %}
+{% assign lab_total = all_labs | size %}
+{% assign cats = site.data.categories | sort: "order" %}
+{% assign home = site.data.home %}
+{% assign profile = site.data.profile %}
+{% assign series_names = all_labs | map: "series" | compact | uniq %}
+{% assign standalone = all_labs | where_exp: "d", "d.series == nil" | sort: "date" | reverse %}
+{% assign standalone_count = standalone | size %}
+
+<section class="hero container">
+  <div class="hero-copy reveal">
+    <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>{{ home.availability }}</p>
+    <h1>{{ profile.display_name | default: profile.name }}</h1>
+    <p class="hero-sub">{{ home.subtitle }}</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="{{ '/it-labs/' | relative_url }}">See my labs</a>
+      <a class="btn btn-ghost" href="{{ '/resume/' | relative_url }}">View resume</a>
+    </div>
+  </div>
+
+  <div class="terminal reveal" aria-hidden="true">
+    <div class="terminal-bar"><span></span><span></span><span></span><p>blaine@kali: ~</p></div>
+    <div class="terminal-body">
+      <p class="t-line"><span class="t-prompt">$</span> whoami</p>
+      <p class="t-line t-out">{{ profile.display_name | default: profile.name | downcase }}{% if home.terminal_role %} · {{ home.terminal_role }}{% endif %}</p>
+      <p class="t-line"><span class="t-prompt">$</span> cat focus.txt</p>
+      <p class="t-line t-out">{{ home.focus }}</p>
+      <p class="t-line"><span class="t-prompt">$</span> ls labs/ | wc -l</p>
+      <p class="t-line t-out">{{ lab_total }}</p>
+      <p class="t-line"><span class="t-prompt">$</span> <span class="t-cursor"></span></p>
+    </div>
+  </div>
+</section>
+
+<section class="container stats reveal">
+  {% for c in cats %}
+  {% assign c_count = all_labs | where: "section", c.slug | size %}
+  <div class="stat">{% if c_count > 0 %}<span class="stat-num">{{ c_count }}</span><span class="stat-label">{{ c.title }} write-ups</span>{% else %}<span class="stat-num">Soon</span><span class="stat-label">{{ c.title }} in progress</span>{% endif %}</div>
+  {% endfor %}
+  {% if home.stat_number %}<div class="stat"><span class="stat-num">{{ home.stat_number }}</span><span class="stat-label">{{ home.stat_label }}</span></div>{% endif %}
+</section>
+
+{% for s in series_names %}
+{% assign parts = all_labs | where: "series", s | sort: "part" %}
+{% assign first = parts | first %}
+<section class="container section">
+  <article class="feature reveal">
+    <div class="feature-copy">
+      <p class="series-kicker">Featured series · {{ parts | size }} parts</p>
+      <h2>{{ s }}</h2>
+      {% if first.series_summary %}<p>{{ first.series_summary }}</p>{% endif %}
+      <a class="btn btn-primary" href="{{ first.url | relative_url }}">Start with Part 1</a>
+    </div>
+    {% assign feature_img = first.series_image | default: first.image %}
+    {% if feature_img %}<div class="feature-shot"><img src="{{ feature_img | relative_url }}" alt="" loading="lazy"></div>{% endif %}
+    <ol class="feature-parts">
+      {% for doc in parts %}
+      <li><a href="{{ doc.url | relative_url }}"><span class="fp-num">{{ doc.part }}</span><span class="fp-title">{{ doc.short_title | default: doc.title }}</span><span class="card-arrow" aria-hidden="true">→</span></a></li>
+      {% endfor %}
+    </ol>
+  </article>
+</section>
+{% endfor %}
+
+{% if standalone_count > 0 %}
+<section class="container section">
+  <div class="section-head reveal">
+    <h2>Latest write-ups</h2>
+  </div>
+  <div class="card-grid">
+    {% for doc in standalone limit: 3 %}
+      {% include writeup-card.html doc=doc %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="container section">
+  <div class="section-head reveal"><h2>Explore my work</h2></div>
+  <div class="explore-grid">
+    {% for c in cats %}
+    {% assign c_url = '/' | append: c.slug | append: '/' %}
+    <a class="card explore-card reveal" href="{{ c_url | relative_url }}">
+      <span class="explore-icon" aria-hidden="true">{{ c.icon | default: '>_' }}</span>
+      <h3>{{ c.title }}</h3>
+      <p>{{ c.card_text | default: c.lead }}</p>
+      <span class="text-link">Browse {{ c.title }} →</span>
+    </a>
+    {% endfor %}
+    <a class="card explore-card reveal" href="{{ '/resume/' | relative_url }}">
+      <span class="explore-icon" aria-hidden="true">{ }</span>
+      <h3>Resume</h3>
+      <p>Work experience, technical knowledge, certifications, and professional development.</p>
+      <span class="text-link">Read resume →</span>
+    </a>
+  </div>
+</section>

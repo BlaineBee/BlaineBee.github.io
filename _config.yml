@@ -1,0 +1,39 @@
+# ─────────────────────────────────────────────────────────────
+#  Site settings — edit these, everything else updates itself.
+#  (After changing this file, GitHub rebuilds the site in ~1 min.)
+# ─────────────────────────────────────────────────────────────
+title: Elijah "Blaine" Bennett
+tagline: IT Support & Cybersecurity
+description: >-
+  Portfolio of Elijah "Blaine" Bennett — IT support and security home labs,
+  CTF write-ups, and resume.
+# Name, contact links, and resume PDF live in _data/profile.yml.
+# Home page text lives in _data/home.yml.
+
+# ─── Build settings (you shouldn't need to touch below here) ───
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  auto_ids: true
+
+# All write-ups live in _labs/<category>/. The folder name is the category
+# (it-labs, cybersecurity-labs, ...) and becomes the URL: /it-labs/my-writeup/
+collections:
+  labs:
+    output: true
+    permalink: /:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: labs
+    values:
+      layout: writeup
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - preview-build
+  - vendor
