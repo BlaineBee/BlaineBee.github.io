@@ -1,4 +1,4 @@
-{% assign nav_cats = site.data.categories | sort: "order" %}
+{% assign nav_cats = site.data.categories | where_exp: "c", "c.slug" | sort: "order" %}
 {% assign nav_items = site.data.navigation.links %}
 <header class="site-header">
   <div class="container nav-wrap">

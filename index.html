@@ -4,7 +4,7 @@ section: home
 ---
 {% assign all_labs = site.labs %}
 {% assign lab_total = all_labs | size %}
-{% assign cats = site.data.categories | sort: "order" %}
+{% assign cats = site.data.categories | where_exp: "c", "c.slug" | sort: "order" %}
 {% assign home = site.data.home %}
 {% assign profile = site.data.profile %}
 {% assign series_names = all_labs | map: "series" | compact | uniq %}
