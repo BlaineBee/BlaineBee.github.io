@@ -1,0 +1,35 @@
+{% assign nav_cats = site.data.categories | sort: "order" %}
+{% assign nav_items = site.data.navigation.links %}
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="Home">
+      <span class="brand-prompt">~/</span>blaine<span class="brand-cursor" aria-hidden="true">_</span>
+    </a>
+    <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
+      <span></span><span></span>
+    </button>
+    <nav id="site-nav" class="site-nav" aria-label="Main">
+      {% for item in nav_items %}
+        {% if item.auto_categories %}
+          {% for cat in nav_cats %}
+            {% assign placed = nav_items | where: "category", cat.slug | size %}
+            {% if placed == 0 %}
+              {% assign cat_url = '/' | append: cat.slug | append: '/' %}
+              <a href="{{ cat_url | relative_url }}"{% if page.section == cat.slug %} class="active" aria-current="page"{% endif %}>{{ cat.title }}</a>
+            {% endif %}
+          {% endfor %}
+        {% elsif item.category %}
+          {% assign cat = site.data.categories[item.category] %}
+          {% if cat %}
+            {% assign cat_url = '/' | append: cat.slug | append: '/' %}
+            <a href="{{ cat_url | relative_url }}"{% if page.section == cat.slug %} class="active" aria-current="page"{% endif %}>{{ item.title | default: cat.title }}</a>
+          {% endif %}
+        {% elsif item.url contains '://' %}
+          <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.title }} <span class="ext" aria-hidden="true">↗</span></a>
+        {% else %}
+          <a href="{{ item.url | relative_url }}"{% if page.url == item.url or item.section and page.section == item.section %} class="active" aria-current="page"{% endif %}>{{ item.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </nav>
+  </div>
+</header>

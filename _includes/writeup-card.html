@@ -1,0 +1,21 @@
+{% assign doc = include.doc %}
+<article class="card writeup-card reveal" data-difficulty="{{ doc.difficulty }}" data-tools="{{ doc.tools | join: '|' }}" data-search="{{ doc.title | escape }} {{ doc.summary | escape }} {{ doc.platform }} {{ doc.tools | join: ' ' }}">
+  <a class="card-link" href="{{ doc.url | relative_url }}">
+    {% if doc.image %}
+    <div class="card-thumb"><img src="{{ doc.image | relative_url }}" alt="" loading="lazy"></div>
+    {% endif %}
+    <div class="card-inner">
+      <div class="card-top">
+        <span class="badge badge-{{ doc.difficulty | slugify }}">{{ doc.difficulty }}</span>
+        {% if doc.series %}<span class="card-platform">Part {{ doc.part }}</span>{% else %}<span class="card-platform">{{ doc.platform }}</span>{% endif %}
+      </div>
+      <h3>{{ doc.short_title | default: doc.title }}</h3>
+      <p>{{ doc.summary }}</p>
+      <ul class="tag-list">{% for tool in doc.tools %}<li class="tag">{{ tool }}</li>{% endfor %}</ul>
+      <div class="card-foot">
+        <time datetime="{{ doc.date | date: '%Y-%m-%d' }}">{{ doc.date | date: "%b %-d, %Y" }}</time>
+        <span class="card-arrow" aria-hidden="true">→</span>
+      </div>
+    </div>
+  </a>
+</article>

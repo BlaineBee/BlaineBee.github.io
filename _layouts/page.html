@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<section class="page-hero container reveal">
+  {% if page.eyebrow %}<p class="eyebrow">{{ page.eyebrow }}</p>{% endif %}
+  <h1>{{ page.title }}</h1>
+  {% if page.lead %}<p class="lead">{{ page.lead }}</p>{% endif %}
+  {% if page.show_resume_download and site.resume_pdf %}
+  <div class="hero-actions"><a class="btn btn-primary" href="{{ site.resume_pdf | relative_url }}" download>Download PDF</a></div>
+  {% endif %}
+</section>
+<div class="container prose-wrap">
+  <div class="prose reveal">
+    {{ content }}
+  </div>
+</div>

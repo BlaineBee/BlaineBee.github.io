@@ -1,0 +1,9 @@
+# One file per category. The studio can create new ones for you.
+slug: cybersecurity-labs
+title: Cybersecurity Labs
+order: 2
+icon: "#!"
+eyebrow: "~/labs/security"
+lead: Penetration testing labs, Kali Linux projects, vulnerability assessments, and CTF write-ups. Every target here is one I own or am authorized to test.
+card_text: Penetration testing labs, Kali Linux projects, vulnerability assessments, CTF write-ups, and security research.
+empty_message: Penetration testing labs, Kali Linux projects, and CTF write-ups are in progress. In the meantime, my Active Directory series is in IT Labs.

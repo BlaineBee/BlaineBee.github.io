@@ -1,0 +1,89 @@
+---
+layout: default
+---
+{% assign cat = site.data.categories[page.section] %}
+{% assign cat_url = '/' | append: page.section | append: '/' %}
+{% assign words = content | number_of_words %}
+{% assign minutes = words | divided_by: 200 | plus: 1 %}
+<article class="writeup">
+  <header class="writeup-hero container reveal">
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="{{ '/' | relative_url }}">Home</a>
+      <span aria-hidden="true">/</span>
+      <a href="{{ cat_url | relative_url }}">{{ cat.title | default: page.section }}</a>
+      {% if page.series %}<span aria-hidden="true">/</span><span class="breadcrumb-here">{{ page.series }} · Part {{ page.part }}</span>{% endif %}
+    </nav>
+    <h1>{% if page.series %}{{ page.short_title | default: page.title }}{% else %}{{ page.title }}{% endif %}</h1>
+    <p class="lead">{{ page.summary }}</p>
+    <ul class="meta-row">
+      <li><span class="badge badge-{{ page.difficulty | slugify }}">{{ page.difficulty }}</span></li>
+      <li>{{ page.platform }}</li>
+      <li><time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%B %-d, %Y" }}</time></li>
+      <li>{{ minutes }} min read</li>
+    </ul>
+  </header>
+
+  <div class="container writeup-body">
+    <div class="prose reveal" data-prose>
+      {% if page.sample %}
+      <aside class="sample-note">Sample write-up for the prototype. Replace it with your own notes and screenshots before going live.</aside>
+      {% endif %}
+      {% if page.tldr %}
+      <aside class="tldr">
+        <p class="tldr-label">TL;DR</p>
+        <p>{{ page.tldr }}</p>
+      </aside>
+      {% endif %}
+      {{ content }}
+    </div>
+
+    <aside class="writeup-aside">
+      {% if page.series %}
+      {% assign series_parts = site.labs | where: "series", page.series | sort: "part" %}
+      <nav class="aside-card series-nav reveal" aria-label="{{ page.series }}">
+        <h2>{{ page.series }}</h2>
+        <ol>
+          {% for doc in series_parts %}
+          <li><a href="{{ doc.url | relative_url }}"{% if doc.url == page.url %} class="is-current" aria-current="page"{% endif %}><span class="sn-num">{{ doc.part }}</span><span>{{ doc.short_title | default: doc.title }}</span></a></li>
+          {% endfor %}
+        </ol>
+      </nav>
+      {% endif %}
+      <div class="aside-card reveal">
+        <h2>At a glance</h2>
+        <dl class="glance">
+          {% if page.platform %}<div><dt>Platform</dt><dd>{{ page.platform }}</dd></div>{% endif %}
+          {% if page.environment %}<div><dt>Environment</dt><dd>{{ page.environment }}</dd></div>{% endif %}
+          {% if page.time_spent %}<div><dt>Time spent</dt><dd>{{ page.time_spent }}</dd></div>{% endif %}
+        </dl>
+        {% if page.skills %}
+        <h3>Skills demonstrated</h3>
+        <ul class="skill-list">{% for skill in page.skills %}<li>{{ skill }}</li>{% endfor %}</ul>
+        {% endif %}
+        {% if page.tools %}
+        <h3>Tools</h3>
+        <ul class="tag-list">{% for tool in page.tools %}<li class="tag">{{ tool }}</li>{% endfor %}</ul>
+        {% endif %}
+      </div>
+      <nav class="aside-card toc" data-toc aria-label="On this page" hidden>
+        <h2>On this page</h2>
+        <ol></ol>
+      </nav>
+    </aside>
+  </div>
+
+  <nav class="container pager" aria-label="More write-ups">
+    {% if page.previous %}
+    <a class="pager-link prev" href="{{ page.previous.url | relative_url }}">
+      <span class="pager-label">← Previous</span>
+      <span class="pager-title">{{ page.previous.title }}</span>
+    </a>
+    {% else %}<span class="pager-spacer"></span>{% endif %}
+    {% if page.next %}
+    <a class="pager-link next" href="{{ page.next.url | relative_url }}">
+      <span class="pager-label">Next →</span>
+      <span class="pager-title">{{ page.next.title }}</span>
+    </a>
+    {% else %}<span class="pager-spacer"></span>{% endif %}
+  </nav>
+</article>

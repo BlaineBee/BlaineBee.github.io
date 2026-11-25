@@ -1,0 +1,9 @@
+# One file per category. The studio can create new ones for you.
+slug: it-labs
+title: IT Labs
+order: 1
+icon: ">_"
+eyebrow: "~/labs/it"
+lead: Hands-on Windows administration, Active Directory, networking, and virtualization projects, the kind of work you do in an enterprise IT environment.
+card_text: Windows administration, Active Directory, networking, virtualization, troubleshooting, and help desk projects.
+empty_message: Labs in progress. Check back soon.

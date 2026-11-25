@@ -1,0 +1,75 @@
+---
+layout: default
+---
+{% assign cat = site.data.categories[page.category] %}
+{% assign docs = site.labs | where: "section", page.category | sort: "date" | reverse %}
+{% assign total = docs | size %}
+{% assign series_names = docs | map: "series" | compact | uniq %}
+{% assign series_count = series_names | size %}
+{% assign standalone = docs | where_exp: "d", "d.series == nil" %}
+{% assign standalone_count = standalone | size %}
+
+<section class="page-hero container reveal">
+  {% if cat.eyebrow %}<p class="eyebrow">{{ cat.eyebrow }}</p>{% endif %}
+  <h1>{{ cat.title | default: page.title }}</h1>
+  {% if cat.lead %}<p class="lead">{{ cat.lead }}</p>{% endif %}
+</section>
+
+<section class="container labs">
+  {% if total == 0 %}
+  <div class="coming-soon reveal">
+    <p class="coming-soon-prompt"><span class="t-prompt">$</span> ls {{ cat.eyebrow | default: page.category }}<span class="t-cursor"></span></p>
+    <h2>First write-ups are on the way</h2>
+    <p>{{ cat.empty_message | default: "Labs in progress. Check back soon." }}</p>
+  </div>
+  {% else %}
+  <div class="filters reveal" data-filters>
+    <label class="search">
+      <span class="visually-hidden">Search write-ups</span>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input type="search" placeholder="Search by title, tool, or topic" data-search-input>
+    </label>
+    <div class="filter-row">
+      <span class="filter-label">Difficulty</span>
+      <div class="chip-group" data-filter-group="difficulty"></div>
+    </div>
+    <div class="filter-row">
+      <span class="filter-label">Tools</span>
+      <div class="chip-group" data-filter-group="tools"></div>
+    </div>
+    <p class="result-count" aria-live="polite">Showing <span data-count>{{ total }}</span> of {{ total }} write-ups</p>
+  </div>
+
+  <div data-card-grid>
+    {% for s in series_names %}
+    {% assign parts = docs | where: "series", s | sort: "part" %}
+    {% assign first = parts | first %}
+    <section class="series-block" data-series-block>
+      <header class="series-head reveal">
+        <p class="series-kicker">Series · {{ parts | size }} parts</p>
+        <h2>{{ s }}</h2>
+        {% if first.series_summary %}<p>{{ first.series_summary }}</p>{% endif %}
+      </header>
+      <div class="card-grid">
+        {% for doc in parts %}
+          {% include writeup-card.html doc=doc %}
+        {% endfor %}
+      </div>
+    </section>
+    {% endfor %}
+
+    {% if standalone_count > 0 %}
+    <section class="series-block" data-series-block>
+      {% if series_count > 0 %}<header class="series-head reveal"><h2>More labs</h2></header>{% endif %}
+      <div class="card-grid">
+        {% for doc in standalone %}
+          {% include writeup-card.html doc=doc %}
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+  </div>
+  <p class="empty-state" data-empty hidden>No write-ups match those filters. <button type="button" class="text-link" data-clear>Clear filters</button></p>
+  {% endif %}
+</section>
+{{ content }}

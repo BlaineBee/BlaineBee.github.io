@@ -1,0 +1,11 @@
+# The nav bar, in order. Managed with Writeup Studio (Home page tab).
+# Each line is one link:
+#   {"title": "...", "url": "/about/", "section": "about"}   a page on the site
+#   {"category": "it-labs"}                                  a category (title comes from the category)
+#   {"title": "...", "url": "https://..."}                   an outside link (opens in a new tab)
+#   {"auto_categories": true}                                every category not placed elsewhere, in category order
+links:
+  - {"title": "Home", "url": "/", "section": "home"}
+  - {"title": "About", "url": "/about/", "section": "about"}
+  - {"auto_categories": true}
+  - {"title": "Resume", "url": "/resume/", "section": "resume"}
